@@ -82,6 +82,29 @@
               </table>
           </el-col>
       </el-row>
+      <el-row style="margin-top:30px">
+        <el-col :span="12">
+          <el-input v-model="cookie1" placeholder="cookie key"></el-input>
+        </el-col>
+        <el-col :span="12">
+          <el-input  v-model="cookie2"  placeholder="cookie value"></el-input>
+        </el-col>
+      </el-row>
+       <el-row style="margin-top:20px">
+        <el-col :span="12">
+          <el-input  v-model="cookie3" placeholder="cookie key"></el-input>
+        </el-col>
+        <el-col :span="12">
+          <el-input  v-model="cookie4" placeholder="cookie value"></el-input>
+        </el-col>
+      </el-row>
+      <el-row style="margin-top:20px" >
+        <el-col :span="24" style="text-align:center">
+            <el-button type="primary" @click="setCookie">设置cookie</el-button>
+            <el-button @click="delCookie">清除cookie</el-button>
+        </el-col> 
+          
+      </el-row> 
       <!-- 数据展示区 -->
       <h2>数据展示区</h2>
       <div style="width:97%;padding:20px;border:1px solid #dddddd;height:200px;overflow:auto;">
@@ -114,7 +137,12 @@ export default {
           key: 'cccc',
           value: '123',
         }],
-      responseList:''
+      responseList:'',
+      // 设置cookie
+      cookie1:'token',
+      cookie2:'Crun36ptTIG2tZ9jKc_pvw',
+      cookie3:'installation_id',
+      cookie4:'jt7xirleQQ24T-p7A63Gug',
     };
   },
   methods: {
@@ -161,7 +189,14 @@ export default {
         }     
       
     },
-
+    setCookie: function() {
+      document.cookie= `${this.cookie1}=${this.cookie2}`;
+      document.cookie= `${this.cookie3}=${this.cookie4}`;
+    },
+    delCookie: function() {
+      setCookie(token, ' ', -1);
+      setCookie(installation_id, ' ', -1);
+    },
     addGet: function() {
       this.gettable.push({
         key:'',
