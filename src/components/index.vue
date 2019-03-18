@@ -192,10 +192,18 @@ export default {
     setCookie: function() {
       document.cookie= `${this.cookie1}=${this.cookie2}`;
       document.cookie= `${this.cookie3}=${this.cookie4}`;
+      this.$message({
+        message: '设置cookie成功',
+        type: 'success'
+      });
     },
     delCookie: function() {
-      setCookie(token, ' ', -1);
-      setCookie(installation_id, ' ', -1);
+      document.cookie= `token=`;
+      document.cookie= `installation_id=`;
+      this.$message({
+        message: '清除cookie成功',
+        type: 'success'
+      });
     },
     addGet: function() {
       this.gettable.push({
