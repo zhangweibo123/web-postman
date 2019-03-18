@@ -1,7 +1,10 @@
 <template>
   <div class="index">
     <div class="content">
-    <h1>促进两岸和谐,推动祖国统一</h1>
+      <div style="overflow:hidden">
+        <h1 style="float:left">促进两岸和谐,推动祖国统一 </h1>
+        <span style="float:right;padding-top:30px">更新时间：2019.3.19</span>
+      </div>
       <el-row>
         <el-col :span="3">
           <el-select v-model="method" placeholder="请选择请求方式">
@@ -238,6 +241,7 @@ export default {
 .el-col {
   padding: 0px 10px;
 }
+.el-input-group__append .el-button{background: #409EFF;color: white}
 #posttable,#getTable{width: 100%;border-collapse: collapse}
 #posttable td, #getTable td{border: 1px solid #dddddd;text-align: center;padding: 10px 30px}
 </style>
